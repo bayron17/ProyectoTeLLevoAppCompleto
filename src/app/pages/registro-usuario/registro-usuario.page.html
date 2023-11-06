@@ -1,0 +1,89 @@
+<ion-header [translucent]="true">
+
+  <ion-toolbar>
+    <ion-list class="contenedor-titulo">
+      <ion-item class="item-titulo">
+        <ion-label class="titulo-login"><img src="../../../assets/img/Logotipo.png" alt="" width="150px"></ion-label>
+      </ion-item>
+    </ion-list>
+    
+    <ion-toolbar id="tituloHeader">
+      <ion-row>
+        <ion-title>
+          <h5>registrarte aquí</h5>
+        </ion-title>
+      </ion-row>
+      
+    </ion-toolbar>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+      <form>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="accessibility-outline"></ion-icon>          
+          </ion-thumbnail>
+                <ion-input [(ngModel)]="nombreCom" name="nombreCom" label="Nombre completo"  labelPlacement="floating" type="text"></ion-input>
+                <span *ngIf="valiNom">{{valiNom}}</span>
+            </ion-item>
+
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="mail-outline"></ion-icon>        
+          </ion-thumbnail>
+              <ion-input [(ngModel)]="email" name="email" label="email@email.com"  labelPlacement="floating" type="text"></ion-input>
+              <span *ngIf="valiEmail">{{valiEmail}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="person-circle-outline"></ion-icon>        
+          </ion-thumbnail>
+          <ion-input [(ngModel)]="user" label="user" name="user" labelPlacement="floating" type="text"></ion-input>
+          <span *ngIf="valiUser">{{valiUser}}</span>
+        </ion-item>
+  
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <ion-icon class="iconos-registro" name="lock-closed-outline"></ion-icon></ion-thumbnail>
+          <ion-input [(ngModel)]="contrasena" name="contrasena" class="input-password" label="Password input"  labelPlacement="floating" type="password" value="password"></ion-input>
+          <span *ngIf="valiPassword">{{valiPassword}}</span>
+        </ion-item>
+
+        <ion-list>
+          <ion-item>
+            <ion-select (ionChange)="cargarComuna()" placeholder="Seleccione Region" [(ngModel)]="regionSeleccionado" name="regionSeleccionado">
+              <ion-select-option [value]="i.id" *ngFor="let i of regiones">{{i.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item> 
+        </ion-list>
+  
+        <ion-list>
+          <ion-item>
+            <ion-select placeholder="Seleccione Comuna" [(ngModel)]="comunaSeleccionada" name="comunaSeleccionada">
+              <ion-select-option [value]="i.id" *ngFor="let i of comunas">{{i.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      
+        <ion-row>
+          <ion-col>
+            <ion-col (click)="logOut()">
+              <ion-icon name="log-out-outline" class="out"></ion-icon>
+            </ion-col>
+          </ion-col>
+          <ion-col>
+            <div class="container-boton">
+              <ion-button fill="clear" class="boton-registrar" (click)="registro()">Registrar</ion-button>
+          </div>
+          </ion-col>
+        </ion-row>
+
+      <br>
+
+    </form>
+  </ion-card>
+</ion-content>

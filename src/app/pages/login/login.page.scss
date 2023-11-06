@@ -1,0 +1,79 @@
+
+.titulo-login{
+    display: flex;
+    justify-content: center;   
+    text-align: center;
+    max-height: 100px;    
+}
+
+ .item-titulo{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+     height: 100%;
+     width: 100%;
+}
+
+
+// style container de entrada (usuario-pasword)
+ion-card{
+    max-width: 500px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+
+ion-item{
+    padding-top: 20px;
+}
+
+// items input
+
+.item-input{
+    padding-bottom: 2%;
+}
+
+
+// style botones
+ion-button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.boxRestContra{
+    display: flex;
+    justify-content: end;
+    margin-right: 4%;
+    
+}
+
+// style registrarse
+.btnRegistrarse{
+    padding-left: 1%;
+}
+
+.Linkregistrarse{
+    text-decoration: none;
+    color: red;
+}
+
+.boton-ingresar:hover{
+    box-shadow: 5px 5px #666;
+}
+
+.btnRecuperar{
+    display: flex;
+    justify-content: end;
+}
+
+// reponsividad
+@media screen and (max-width: 768px) {
+    .ng-container {
+      padding: 20px; /* Cambia el espaciado del contenedor en pantallas más pequeñas */
+    }
+  
+    .ion-input {
+      max-width: 80%; /* Reduce el ancho máximo de los inputs en pantallas más pequeñas */
+    }
+  }
