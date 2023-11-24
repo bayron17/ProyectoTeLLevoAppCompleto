@@ -116,13 +116,14 @@ export class AddAutoPage implements OnInit {
     this.validarCapacidad();
     this.validarDuenio();
     this.validarAnio();
-
+    
     if(this.marca.length == 0|| this.modelo.length == 0|| this.patente .length== 0|| this.color.length == 0|| this.capacidad.length == 0|| this.duenio.length  == 0 || this.anio.length == 0){
       this.ValiCamposVacio = this.helper.showAlert("Complete todos los campos solicitado para continuar","Campo incompleto");
     }else{
 
       const storageauto = await localStorage.getItem('CapacitorStorage.addCar');
-        
+      const storageAuto = this.storageAuto.obtenerItem;
+    
       if (storageauto) { 
         const car = JSON.parse(storageauto); // Convierte la cadena JSON en un array de objetos
         this.leru = car.find((carro:any) => carro.patente === this.patente);
@@ -150,6 +151,28 @@ export class AddAutoPage implements OnInit {
           }catch(error:any){
       
           }
+        }
+      }else{
+        try{
+          const loader = await this.helper.showLoading('Cargando');
+
+          var veh = [
+                      {
+                        marca:this.marca,
+                        modelo:this.modelo,
+                        patente:this.patente,
+                        color:this.color,
+                        capacidad:this.capacidad,
+                        duenio:this.duenio,
+                        anio:this.anio
+                      }
+                    ]
+    
+          this.storageAuto.agregarVehiculo(veh);
+          this.helper.showAlert("Informacion del vehiculo registrada","Vehiculo agregado exitosamente");
+          loader.dismiss();
+        }catch(error:any){
+    
         }
       }
      

@@ -31,10 +31,19 @@ export class LoginPage implements OnInit {
 
 
   printCurrentPosition = async () => {
-    const coordinates = await Geolocation.getCurrentPosition();
-    const longitud = await coordinates.coords.longitude;
-    const latitude = await coordinates.coords.latitude;
-    await this.helperService.showToast("Su geolocalizacion es:" + "longitud " + longitud + "," + "Latitud " + latitude);
+    if(navigator.onLine){
+      try{
+      const coordinates = await Geolocation.getCurrentPosition();
+      const longitud = await coordinates.coords.longitude;
+      const latitude = await coordinates.coords.latitude;
+      await this.helperService.showToast("Su geolocalizacion es:" + "longitud " + longitud + "," + "Latitud " + latitude);
+      }catch(error){
+        this.helperService.showToast("La geolocalizacion nose a podido cargada");
+      }
+    }else{
+      this.helperService.showToast("No hay conexión a Internet. La geolocalización no se ha podido cargar.");
+    }
+   
   };
 
 

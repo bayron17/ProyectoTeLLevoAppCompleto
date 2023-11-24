@@ -10,7 +10,7 @@ describe('StorageUserService', () => {
     service = TestBed.inject(StorageUserService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+   it('should be created', () => {
+     expect(service).toBeTruthy();
+   });
 });

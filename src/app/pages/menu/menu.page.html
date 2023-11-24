@@ -22,12 +22,12 @@
     </ion-header>
     <ion-content class="ion-padding" scrollY="false">
   
-      <ion-list>
-        <ion-item  *ngFor="let i of aaa">
-          <ion-icon style="padding-right: 5px; color: #ad0505; font-size: 30px;" name="person-circle-outline"></ion-icon>
-          <h3 class="correoUser">{{i}}</h3>
-        </ion-item>
-      </ion-list>
+        <ion-list >
+          <ion-item  *ngFor="let i of aaa" class="conMenu">
+            <ion-icon style="padding-right: 5px; color: #ad0505; font-size: 30px;" name="person-circle-outline"></ion-icon>
+            <h3 class="correoUser">{{i}}</h3>
+          </ion-item>
+        </ion-list>
 
       <ion-list *ngIf="loggedInUser">
         <ion-item>

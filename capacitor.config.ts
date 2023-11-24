@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'cl.tellevo.app',
   appName: 'teLLevoApp',
   webDir: 'www',
   server: {

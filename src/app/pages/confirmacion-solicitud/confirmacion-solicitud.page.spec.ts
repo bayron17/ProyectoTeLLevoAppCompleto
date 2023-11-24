@@ -5,13 +5,16 @@ describe('ConfirmacionSolicitudPage', () => {
   let component: ConfirmacionSolicitudPage;
   let fixture: ComponentFixture<ConfirmacionSolicitudPage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
+    TestBed.configureTestingModule({
+      declarations:[ConfirmacionSolicitudPage]
+    })
     fixture = TestBed.createComponent(ConfirmacionSolicitudPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+   it('should create', () => {
+     expect(component).toBeTruthy();
+   });
 });
